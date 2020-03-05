@@ -49,7 +49,7 @@ def newBook (row):
     """
     Crea una nueva estructura para almacenar un libro 
     """
-    book = {"book_id": row['book_id'], "title":row['title'], "average_rating":row['average_rating'], "ratings_count":row['ratings_count']}
+    book = {"start_time": row['Start_Time']}
     return book
 
 def addBookList (catalog, row):
@@ -66,7 +66,7 @@ def addBookMap (catalog, row):
     """
     book = newBook(row)
     #catalog['booksTree'] = map.put(catalog['booksTree'], int(book['book_id']), book, greater)
-    catalog['booksTree']  = map.put(catalog['booksTree'] , book['title'], book, greater)
+    catalog['booksTree']  = map.put(catalog['booksTree'] , book['start_time'], book, greater)
 
 
 # Funciones de consulta

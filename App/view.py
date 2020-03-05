@@ -73,29 +73,29 @@ def main():
             print("Recursion Limit:",sys.getrecursionlimit())
             catalog = initCatalog ()
             loadData (catalog)
-            print ('Arbol Libros cargados: ' + str(map.size(catalog['booksTree'])))
-            print ('Lista libros cargados: ' + str(lt.size(catalog['booksList'])))
+            print ('Arbol Accidentes cargados: ' + str(map.size(catalog['booksTree'])))
+            print ('Lista Accidentes cargados: ' + str(lt.size(catalog['booksList'])))
             print ('Altura arbol: ' + str(map.height(catalog['booksTree'])))
             
         elif int(inputs[0])==2:
-            title = input("Nombre del titulo a buscar: ")
+            title = input("Fecha del accidente a buscar: ")
             book = controller.getBookMap(catalog,title)
             if book:
-                print("Libro encontrado:",book['title'],book['average_rating'])
+                print("Accidente encontrado:",book['title'],book['average_rating'])
             else:
-                print("Libro No encontrado")    
+                print("Accidente No encontrado")    
 
-        elif int(inputs[0])==3:
-            title = input("Nombre del titulo a buscar (rank): ")
+        elif int(inputs[0])==3: #Requerimento 1
+            title = input("Nombre de la fecha a buscar (rank): ")
             rank = controller.rankBookMap(catalog,title)
-            print("Hay ",rank," titulos menores (rank) que "+title)
+            print("Hay ",rank," accidentes que sucedieron antes (rank) que "+title)
         elif int(inputs[0])==4:
-            pos = int(input("Posición del k-esimo titulo del libro (select) a obtener: "))
+            pos = int(input("Posición del k-esimo accidente (select) a obtener: "))
             book = controller.selectBookMap(catalog, pos)
             if book:
-                print("Libro en posición:",pos,":",book['value']['title'],book['value']['average_rating'])
+                print("Accidente en posición:",pos,":",book['value']['title'],book['value']['average_rating'])
             else:
-                print("Libro no encotrado en posicion: ",pos)
+                print("Accidente no encotrado en posicion: ",pos)
 
         else:
             sys.exit(0)
