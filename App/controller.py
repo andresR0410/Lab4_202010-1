@@ -70,7 +70,7 @@ def loadBooks (catalog, sep=','):
             # Se adiciona el libro al mapa de libros (key=title)
             model.addBookMap(catalog, row)
     t1_stop = process_time() #tiempo final
-    print("Tiempo de ejecución carga libros:",t1_stop-t1_start," segundos")   
+    print("Tiempo de ejecución carga accidentes:",t1_stop-t1_start," segundos")   
 
 
 
