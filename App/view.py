@@ -40,9 +40,9 @@ operación solicitada
 def printMenu():
     print("Bienvenido al Laboratorio 4")
     print("1- Cargar información")
-    print("2- Buscar libro por llave (titulo) ")
-    print("3- Consultar cuantos libros hay alfabeticamente menores a una llave (titulo) - (rank)")
-    print("4- Buscar un libro por posición de la llave (titulo) - (select)")
+    print("2- Buscar") # libro por llave (titulo) ")
+    print("3- Consultar cuantos accidentes ocurrienron antes de una fecha dada- (rank)") #laboratorio 4 (requerimiento 1)
+    print("4- Buscar") # un libro por posición de la llave (titulo) - (select)")
     print("0- Salir")
 
 
@@ -78,7 +78,7 @@ def main():
             print ('Altura arbol: ' + str(map.height(catalog['booksTree'])))
             
         elif int(inputs[0])==2:
-            title = input("Fecha del accidente a buscar: ")
+            title = input("")
             book = controller.getBookMap(catalog,title)
             if book:
                 print("Accidente encontrado:",book['title'],book['average_rating'])
@@ -86,7 +86,7 @@ def main():
                 print("Accidente No encontrado")    
 
         elif int(inputs[0])==3: #Requerimento 1
-            title = input("Nombre de la fecha a buscar (rank): ")
+            title = input("Fecha del accidente a buscar: (por favor ingrésela en el formato aa-mm-dd)")
             rank = controller.rankBookMap(catalog,title)
             print("Hay ",rank," accidentes que sucedieron antes (rank) que "+title)
         elif int(inputs[0])==4:
